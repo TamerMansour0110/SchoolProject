@@ -54,7 +54,6 @@ public class SchoolControl {
         school.toJson();
         try (FileWriter file = new FileWriter("C:\\Development\\NetBeans\\school\\school.json")) {
             file.write(school.toJson().toJSONString());
-            file.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -65,7 +64,7 @@ public class SchoolControl {
         JSONParser parser = new JSONParser();
         try (FileReader reader = new FileReader("C:\\Development\\NetBeans\\school\\school.json")) {
             JSONObject jsonObject = (JSONObject) parser.parse(reader);
-            System.out.println(school.toJson());
+            System.out.println(jsonObject.toJSONString());
         } catch (IOException | ParseException e) {
             e.printStackTrace();
         }
